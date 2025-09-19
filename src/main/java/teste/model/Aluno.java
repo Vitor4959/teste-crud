@@ -30,6 +30,8 @@ public class Aluno implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;	
+	private String prontuario;
+	private String frase;
 	private String nome;
 	
 }

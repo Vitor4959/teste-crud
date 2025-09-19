@@ -40,6 +40,16 @@
 					<h:outputText value="#{aluno.nome}" />
 				</p:column>				
 
+				<p:column headerText="Pront"
+					filterBy="#{aluno.prontuario}" sortBy="#{aluno.salario}">
+					<h:outputText value="#{aluno.prontuario}" />
+				</p:column>		
+
+				<p:column headerText="Frase"
+					filterBy="#{aluno.frase}" sortBy="#{aluno.salario}">
+					<h:outputText value="#{aluno.frase}" />
+				</p:column>		
+
 				<p:column headerText="Operações">					
 					
 					<p:commandButton id="cb1" icon="pi pi-pencil" title="Editar"	    				
@@ -72,6 +82,12 @@
 
 			<p:outputLabel for="id" value="Id: " />
 			<p:outputLabel id="id" value="#{manterAlunoBean.aluno.id}" />
+
+			<p:outputLabel for="x" value="Prontuario: " />
+			<p:inputText id="x" value="#{manterAlunoBean.aluno.prontuario}" />
+
+			<p:outputLabel for="fr" value="Frase: " />
+			<p:inputText id="fr" value="#{manterAlunoBean.aluno.frase}" />
 
 			<p:outputLabel for="nome" value="Nome: " />
 			<p:inputText id="nome" value="#{manterAlunoBean.aluno.nome}" />
