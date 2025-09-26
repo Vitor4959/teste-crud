@@ -38,15 +38,17 @@
 				<p:column headerText="Nome"
 					filterBy="#{aluno.nome}" sortBy="#{aluno.salario}">
 					<h:outputText value="#{aluno.nome}" />
-				</p:column>				
+				</p:column>		
+				
+				<p:column headerText="Sobrenome">
+					<h:outputText value="#{aluno.sobrenome}" />
+				</p:column>		
 
-				<p:column headerText="Pront"
-					filterBy="#{aluno.prontuario}" sortBy="#{aluno.salario}">
+				<p:column headerText="Pront">
 					<h:outputText value="#{aluno.prontuario}" />
 				</p:column>		
 
-				<p:column headerText="Frase"
-					filterBy="#{aluno.frase}" sortBy="#{aluno.salario}">
+				<p:column headerText="Frase">
 					<h:outputText value="#{aluno.frase}" />
 				</p:column>		
 
@@ -83,14 +85,17 @@
 			<p:outputLabel for="id" value="Id: " />
 			<p:outputLabel id="id" value="#{manterAlunoBean.aluno.id}" />
 
-			<p:outputLabel for="x" value="Prontuario: " />
-			<p:inputText id="x" value="#{manterAlunoBean.aluno.prontuario}" />
+			<p:outputLabel for="Pront" value="Prontuario: " />
+			<p:inputText id="Pront" value="#{manterAlunoBean.aluno.prontuario}" />
 
 			<p:outputLabel for="fr" value="Frase: " />
 			<p:inputText id="fr" value="#{manterAlunoBean.aluno.frase}" />
 
 			<p:outputLabel for="nome" value="Nome: " />
 			<p:inputText id="nome" value="#{manterAlunoBean.aluno.nome}" />
+
+			<p:outputLabel for="sobre" value="sobrenome: " />
+			<p:inputText id="sobre" value="#{manterAlunoBean.aluno.sobrenome}" />
 
 			<p:commandButton icon="pi pi-save" id="salvarButton"
 				value="Salvar" title="Grava dados do aluno"
