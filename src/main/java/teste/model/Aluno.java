@@ -34,5 +34,7 @@ public class Aluno implements Serializable {
 	private String frase;
 	private String nome;
 	private String sobrenome;
+	private Boolean boo;
+	
 	
 }

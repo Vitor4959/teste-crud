@@ -50,7 +50,12 @@
 
 				<p:column headerText="Frase">
 					<h:outputText value="#{aluno.frase}" />
-				</p:column>		
+				</p:column>	
+
+				<p:column headerText="Boo">
+					<h:outputText value="#{aluno.boo}" />
+				</p:column>	
+
 
 				<p:column headerText="Operações">					
 					
@@ -96,6 +101,10 @@
 
 			<p:outputLabel for="sobre" value="sobrenome: " />
 			<p:inputText id="sobre" value="#{manterAlunoBean.aluno.sobrenome}" />
+
+			<p:outputLabel for="Inativo"/>
+        			 <p:selectBooleanCheckbox value="#{manterAlunoBean.aluno.boo}" itemLabel="Basic"/>
+			<p:outputLabel id="Inativo"/>
 
 			<p:commandButton icon="pi pi-save" id="salvarButton"
 				value="Salvar" title="Grava dados do aluno"
