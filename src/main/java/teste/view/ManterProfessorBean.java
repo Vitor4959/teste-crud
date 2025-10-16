@@ -31,8 +31,8 @@ public class ManterProfessorBean implements Serializable{
 	
 	@Inject
 	private ManterProfessorService manterProfessorService;
-	private Professor Professor = new Professor();
-	private List<Professor> Professors = new ArrayList<Professor>();
+	private Professor professor = new Professor();
+	private List<Professor> professors = new ArrayList<Professor>();
 
 	
 	@PostConstruct
@@ -43,25 +43,25 @@ public class ManterProfessorBean implements Serializable{
 	}
 	
 	public void salvar() {
-		log.info(Professor.toString());
-		manterProfessorService.salvar(Professor);
+		log.info(professor.toString());
+		manterProfessorService.salvar(professor);
 		
 		FacesContext.getCurrentInstance().
         addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
         		"O Professor foi gravado com sucesso!", 
-        		Professor.toString()));
+        		professor.toString()));
 		
-		log.info("Professor: " + Professor.toString());
+		log.info("professor: " + professor.toString());
 	}
 	
 	public void excluir() {
 		try {
-			manterProfessorService.excluir(Professor);
-			this.Professors = manterProfessorService.buscarTodos();
+			manterProfessorService.excluir(professor);
+			this.professors = manterProfessorService.buscarTodos();
 			FacesContext.getCurrentInstance().addMessage(null, 
 					new FacesMessage(FacesMessage.SEVERITY_INFO,
-							"Professor " + Professor.getNome() + " excluído com sucesso.", null));
-			log.info("Professor excluido = " + Professor.getNome());
+							"Professor " + professor.getNome() + " excluído com sucesso.", null));
+			log.info("professor excluido = " + professor.getNome());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -72,7 +72,7 @@ public class ManterProfessorBean implements Serializable{
 		
 	public void limpar() {
 
-		this.Professor = new Professor();
+		this.professor = new Professor();
 	}
 	
 }
