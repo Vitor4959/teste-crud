@@ -39,10 +39,10 @@ public class ProfessorDao implements Serializable{
 	}
 	
 	@Transactional
-	public void excluir(Professor Professor) throws PersistenceException {
+	public void excluir(Professor professor) throws PersistenceException {
 
 		try {
-			Professor a = manager.find(Professor.class, Professor.getId());
+			Professor a = manager.find(Professor.class, professor.getId());
 			manager.remove(a);
 			manager.flush();
 		} catch (PersistenceException e) {

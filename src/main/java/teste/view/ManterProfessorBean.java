@@ -45,6 +45,7 @@ public class ManterProfessorBean implements Serializable{
 	public void salvar() {
 		log.info(professor.toString());
 		manterProfessorService.salvar(professor);
+		this.setProfessors(manterProfessorService.buscarTodos());
 		
 		FacesContext.getCurrentInstance().
         addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
@@ -52,6 +53,7 @@ public class ManterProfessorBean implements Serializable{
         		professor.toString()));
 		
 		log.info("professor: " + professor.toString());
+		limpar();
 	}
 	
 	public void excluir() {
